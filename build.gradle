@@ -25,6 +25,12 @@ allprojects {
 
 apply plugin: "com.dorongold.task-tree"
 
+//optional configuration
+taskTree{
+    noRepeat = true  //do not print a sub-tree in the task-tree more than once
+    impliesSubProjects = true  //do not print task-tree for child projects in a multi-project
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
